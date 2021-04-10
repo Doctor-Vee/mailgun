@@ -24,7 +24,7 @@ public class MailgunServiceImpl implements MailgunService {
         try {
             HttpResponse<JsonNode> response = Unirest.post("https://api.mailgun.net/v3/" + domainName + "/messages")
                     .basicAuth("api", apiKey)
-                    .queryString("from", "Doctor Vee from Mailgun App<doctorvee@mailgun.com>")
+                    .queryString("from", "Doctor Vee from TestingMailGun App<doctorvee@testingmail.com>")
                     .queryString("to", request.getEmail())
                     .queryString("subject", request.getSubject())
                     .queryString("text", request.getMessage())
